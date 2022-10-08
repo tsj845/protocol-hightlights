@@ -1,0 +1,22 @@
+```
+if
+else
+while
+for
+break
+continue
+func
+return
+try
+catch
+finally
+class hello {
+    private final int x;
+    constructor () {
+        this.x = 1;
+    }
+    public static void main (String[] args) {
+        println(args[0]);
+    }
+}
+```

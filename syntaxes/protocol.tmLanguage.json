@@ -1,0 +1,64 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "protocol",
+	"patterns": [
+		{
+			"include": "#psudo"
+		}
+	],
+	"repository": {
+		"psudo": {
+			"begin": "```",
+			"end": "```",
+			"patterns": [
+				{
+					"include": "#strings"
+				},
+				{
+					"include": "#numbers"
+				},
+				{
+					"include": "#keywords"
+				},
+				{
+					"include": "#reserved"
+				},
+				{
+					"include": "#types"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.protocol",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.protocol",
+					"match": "\\\\."
+				},
+				{
+					"name": "constant.language.protocol",
+					"match": "(?<!\\\\)\\{.*?(?<!\\\\)}"
+				}
+			]
+		},
+		"numbers": {
+			"name": "constant.numeric.protocol",
+			"match": "\\b-?(([0-9]+(\\.[0-9]+)?)|(0x[0-9abcdef]+)|(0b[01]+))\\b"
+		},
+		"keywords": {
+			"name": "keyword.control.protocol",
+			"match": "\\b(if|for|while|else|continue|break|func|new|return|try|catch|finally|class|public|private|final|static)\\b"
+		},
+		"reserved": {
+			"name": "constant.language.protocol",
+			"match": "\\b(constructor|this)\\b"
+		},
+		"types": {
+			"name": "entity.name.type",
+			"match": "\\b(int|bool|String|char|byte|void)\\b"
+		}
+	},
+	"scopeName": "source.proto"
+}
