@@ -65,7 +65,7 @@
 		},
 		"keywords": {
 			"name": "keyword.control.protocol",
-			"match": "\\b(if|for|while|else|continue|break|func|new|return|try|catch|finally|class|public|private|final|static|match|case|default)\\b"
+			"match": "\\b(if|for|while|else|continue|break|func|new|return|try|catch|finally|class|public|private|final|static|match|case|default|in|async|await)\\b"
 		},
 		"reserved": {
 			"name": "constant.language.protocol",
